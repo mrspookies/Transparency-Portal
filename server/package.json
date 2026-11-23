@@ -1,0 +1,17 @@
+{
+  "name": "transparency-portal-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local backend for the Transparency Portal exit-plan page (mirrors the Black Box architecture).",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

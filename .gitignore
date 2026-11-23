@@ -1,0 +1,16 @@
+# Secrets and runtime state — never publish
+server/.env
+server/data/
+server/seed/
+server/node_modules/
+node_modules/
+backend/
+*.db
+*.log
+.DS_Store
+Thumbs.db
+
+# Local Windows launcher artifacts
+*.lnk
+.vscode/
+.idea/

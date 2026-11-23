@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="tp_icon.ico">
+<title>Exit Plan — Transparency Portal</title>
+<meta name="description" content="A timestamped move-out timeline, checkpoints, and settlement plan.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' http://localhost:5001; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
+<link rel="stylesheet" href="css/portfolio.css">
+<style>
+  .exit-body { font-family: var(--font-mono); font-size: 0.92rem; line-height: 1.7; color: #d9d9d9; margin-top: 1.25rem; }
+  .exit-body a { color: var(--white); }
+  .exit-body h2,
+  .exit-body h3,
+  .exit-body h4,
+  .exit-body h5,
+  .exit-body h6 {
+    color: var(--white);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    max-width: none;
+  }
+  .exit-body h2 { font-size: 1.4rem; margin: 2rem 0 0.85rem; }
+  .exit-body h3 { font-size: 1.15rem; margin: 1.6rem 0 0.65rem; }
+  .exit-body h4 { font-size: 1rem; margin: 1.35rem 0 0.5rem; }
+  .exit-body h5,
+  .exit-body h6 { font-size: 0.92rem; margin: 1.15rem 0 0.4rem; }
+  .exit-body p {
+    max-width: 66ch;
+    color: #d9d9d9;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin: 0 0 0.9rem;
+  }
+  .exit-body strong { color: var(--white); font-weight: 700; }
+  .exit-body em { color: #e6e6e6; }
+  .exit-body ul,
+  .exit-body ol {
+    margin: 0.5rem 0 1.1rem;
+    padding-left: 1.6rem;
+    max-width: 66ch;
+  }
+  .exit-body ul { list-style: disc; }
+  .exit-body ol { list-style: decimal; }
+  .exit-body li {
+    margin: 0.4rem 0;
+    padding-left: 0.25rem;
+    color: #d9d9d9;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .exit-body li::marker { color: var(--white); font-weight: 700; font-size: 1.1em; }
+  .exit-body li.task { list-style: none; margin-left: -1.15rem; }
+  .exit-body li.task input {
+    margin-right: 0.55rem;
+    accent-color: var(--white);
+    transform: translateY(1px);
+  }
+  .exit-body hr { border: 0; border-top: 1px solid var(--grey-dim); margin: 1.9rem 0; }
+  .exit-body pre {
+    background: #0a0a0a;
+    border: 1px solid var(--grey-dim);
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0 1.4rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+  .exit-body code { font-family: var(--font-mono); font-size: 0.85em; }
+  .exit-body p code,
+  .exit-body li code {
+    background: #111;
+    border: 1px solid var(--grey-dim);
+    padding: 0.08em 0.35em;
+  }
+  .exit-body .table-wrap { overflow-x: auto; margin: 1rem 0 1.6rem; }
+  .exit-body table {
+    width: 100%;
+    min-width: 34rem;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  .exit-body th,
+  .exit-body td {
+    border: 1px solid var(--grey-dim);
+    padding: 0.6rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .exit-body th {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: var(--track-mid);
+    font-size: 0.62rem;
+  }
+  .exit-byline { margin-top: 1.5rem; }
+  .comments-shell { margin-top: 3.5rem; }
+  .comments-shell h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: var(--track-tight); margin-bottom: 1.25rem; }
+  .comment-body { color: #d9d9d9; font-size: 0.9rem; line-height: 1.6; white-space: pre-wrap; }
+  .comment-empty { text-align: center; color: var(--grey-dim); font-size: 0.72rem; letter-spacing: var(--track-mid); text-transform: uppercase; padding: 2.5rem 1rem; border: 1px dashed var(--grey-dim); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">TRANSPARENCY PORTAL</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero wrap">
+    <p class="case-number">FILE 01 / TRANSPARENCY PORTAL / EXIT PLAN</p>
+    <h1>Exit Plan</h1>
+    <p class="hero-lede">
+      Retrieved, timestamped, unedited. The move-out timeline, monthly checkpoints,
+      and settlement path — kept visible for verification.
+    </p>
+  </section>
+
+  <hr class="tape-rule">
+
+  <section class="section wrap">
+    <p class="eyebrow" id="status-line" style="margin-bottom:1.5rem;">PLAN RETRIEVED: 0 — AWAITING FIRST TRANSMISSION</p>
+    <div class="log-stack" id="plan-stack">
+      <!-- Populated by js/exitplan.js -->
+    </div>
+
+    <div class="comments-shell">
+      <h2>Comments</h2>
+      <div class="log-stack" id="comments-stack"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-note">&copy; <span id="year"></span> Transparency Portal. All rights reserved.</p>
+    <nav class="footer-links">
+      <a href="index.html">Exit Plan</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/markdown.js"></script>
+<script src="js/exitplan.js"></script>
+</body>
+</html>
